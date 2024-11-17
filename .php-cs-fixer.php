@@ -8,12 +8,12 @@ declare(strict_types=1);
  * For the full copyright and license information, please view
  * the LICENSE.md file that was distributed with this source code.
  *
- * @see https://github.com/ergebnis/php-package-template
+ * @see https://github.com/ergebnis/php-cs-fixer-config
  */
 
-use Ergebnis\PhpCsFixer;
+use Ergebnis\PhpCsFixer\Config;
 
-$config = PhpCsFixer\Config\Factory::fromRuleSet(new PhpCsFixer\Config\RuleSet\Php80(), [
+$ruleSet = Config\RuleSet\Php83::create()->withRules(Config\Rules::fromArray([
     'binary_operator_spaces' => [
         'operators' => [
             '=' => 'align',
@@ -25,7 +25,9 @@ $config = PhpCsFixer\Config\Factory::fromRuleSet(new PhpCsFixer\Config\RuleSet\P
     'phpdoc_no_package' => false,
     'phpdoc_separation' => false,
     'phpdoc_summary' => false,
-]);
+]));
+
+$config = Config\Factory::fromRuleSet($ruleSet);
 
 $config->getFinder()
     ->path([

@@ -14,8 +14,6 @@
 
 namespace Teapot\StatusCodeException;
 
-use InvalidArgumentException;
-
 /**
  * Exception thrown when the Status Code is invalid.
  *
@@ -28,7 +26,7 @@ use InvalidArgumentException;
  * @license   MIT http://opensource.org/licenses/MIT
  * @see      https://shrikeh.github.com/teapot
  */
-class InvalidStatusCodeException extends InvalidArgumentException
+class InvalidStatusCodeException extends \InvalidArgumentException
 {
     /**
      * Named constructor for non-numeric status codes.

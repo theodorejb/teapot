@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        php: [ '8.0', '8.1', '8.2' ]
+        php: [ '8.0', '8.1', '8.2', '8.3' ]
 
     steps:
       - name: "Checkout"
@@ -31,11 +31,11 @@ jobs:
 
       - name: "Run PHP CS Fixer"
         run: "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --verbose --dry-run --using-cache=no"
-        if: ${{ matrix.php == '8.2' }}
+        if: ${{ matrix.php == '8.3' }}
 
       - name: "Run Psalm"
         run: "psalm --output-format=github"
-        if: ${{ matrix.php == '8.2' }}
+        if: ${{ matrix.php == '8.3' }}
 
       - name: "Run phpspec"
         run: "vendor/bin/phpspec run"

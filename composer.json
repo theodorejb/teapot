@@ -23,9 +23,9 @@
     "teapot/status-code": "^2.1"
   },
   "require-dev": {
-    "ergebnis/php-cs-fixer-config": "^5.9.2",
-    "phpspec/phpspec": "^7.4",
-    "vimeo/psalm": "^5.14.1"
+    "ergebnis/php-cs-fixer-config": "^6.37",
+    "phpspec/phpspec": "^7.5",
+    "vimeo/psalm": "^5.26"
   },
   "scripts": {
     "analyze": "psalm",
